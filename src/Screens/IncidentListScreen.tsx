@@ -34,7 +34,7 @@ const IncidentListScreen = ({navigation}: IncidentListScreenProps) => {
   const fetchIncidents = async () => {
     try {
       // Updated to use the new EC2 host
-      const response = await fetch('http://ec2-13-234-204-250.ap-south-1.compute.amazonaws.com:8080/api/incidents');
+      const response = await fetch('https://healwildtagapp.cloud/api/incidents');
       if (response.ok) {
         const data = await response.json();
         // Backend returns a Page object based on the controller code

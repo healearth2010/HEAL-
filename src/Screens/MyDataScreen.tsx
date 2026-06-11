@@ -23,7 +23,7 @@ const MyDataScreen = ({navigation}: MyDataScreenProps) => {
     setLoading(true);
     try {
       // Assuming a standard endpoint for data request
-      const response = await fetch('http://10.0.2.2:8080/api/v1/users/request-data', {
+      const response = await fetch('https://healwildtagapp.cloud/api/v1/users/request-data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const MyDataScreen = ({navigation}: MyDataScreenProps) => {
     setLoading(true);
     try {
       // Assuming a standard endpoint for data deletion
-      const response = await fetch('http://10.0.2.2:8080/api/v1/users/data', {
+      const response = await fetch('https://healwildtagapp.cloud/api/v1/users/data', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

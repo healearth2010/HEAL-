@@ -53,7 +53,7 @@ const IncidentFormScreen = ({ navigation }: IncidentFormScreenProps) => {
     try {
       setCategoriesLoading(true);
       const response = await fetch(
-        'http://ec2-13-234-204-250.ap-south-1.compute.amazonaws.com:8080/api/categories/',
+        'https://healwildtagapp.cloud/api/categories/',
       );
       if (response.ok) {
         const data = await response.json();
@@ -280,7 +280,7 @@ const IncidentFormScreen = ({ navigation }: IncidentFormScreenProps) => {
 
     try {
       const response = await fetch(
-        'http://ec2-13-234-204-250.ap-south-1.compute.amazonaws.com:8080/api/incidents/',
+        'https://healwildtagapp.cloud/api/incidents/',
         {
           method: 'POST',
           body: formData,

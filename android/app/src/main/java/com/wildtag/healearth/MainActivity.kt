@@ -1,4 +1,4 @@
-package com.heal
+package com.wildtag.healearth
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

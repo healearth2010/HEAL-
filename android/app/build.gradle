@@ -77,13 +77,13 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.heal"
+    namespace "com.wildtag.healearth"
     defaultConfig {
-        applicationId "com.heal"
+        applicationId "com.wildtag.healearth"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.0.0"
     }
 
     // Generate a separate APK per ABI — each tester gets only their arch's .so files.
@@ -96,26 +96,32 @@ android {
             include "arm64-v8a"         // only arm64 for tester distribution
         }
     }
-    signingConfigs {
-        debug {
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
-        }
-    }
-    buildTypes {
-        debug {
-            signingConfig signingConfigs.debug
-        }
-        release {
-            // Caution! In production, you need to generate your own keystore file.
-            // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
-            minifyEnabled enableProguardInReleaseBuilds
-            shrinkResources enableProguardInReleaseBuilds   // remove unused resources
-            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-        }
+     signingConfigs {
+         debug {
+             storeFile file('debug.keystore')
+             storePassword 'android'
+             keyAlias 'androiddebugkey'
+             keyPassword 'android'
+         }
+         release {
+             storeFile file('release.keystore')
+             storePassword 'android'
+             keyAlias 'release_alias'
+             keyPassword 'android'
+         }
+     }
+     buildTypes {
+         debug {
+             signingConfig signingConfigs.debug
+         }
+         release {
+             // Caution! In production, you need to generate your own keystore file.
+             // see https://reactnative.dev/docs/signed-apk-android.
+             signingConfig signingConfigs.release
+             minifyEnabled enableProguardInReleaseBuilds
+             shrinkResources enableProguardInReleaseBuilds   // remove unused resources
+             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+         }
     }
 }
 

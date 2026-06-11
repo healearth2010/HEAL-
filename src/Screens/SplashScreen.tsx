@@ -72,8 +72,8 @@ const SplashScreen: React.FC<Props> = ({navigation}) => {
             animatedTextStyle,
             {top: insets.top + 50},
           ]}>
-          <Text style={styles.titleText}>Wildlife</Text>
-          <Text style={styles.titleText}>Watch</Text>
+          <Text style={styles.titleText}>WildTag</Text>
+          {/* <Text style={styles.titleText}>Watch</Text> */}
         </Animated.View>
       )}
 

@@ -1,4 +1,4 @@
-package com.heal
+package com.wildtag.healearth
 
 import android.app.Application
 import com.facebook.react.PackageList

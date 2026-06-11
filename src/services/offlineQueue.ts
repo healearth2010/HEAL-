@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const QUEUE_KEY = 'offline_incident_queue';
 const API_URL =
-  'http://ec2-13-234-204-250.ap-south-1.compute.amazonaws.com:8080/api/incidents/';
+  'https://healwildtagapp.cloud/api/incidents/';
 
 export interface QueuedFile {
   uri: string;
